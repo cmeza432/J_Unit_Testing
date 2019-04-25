@@ -1,5 +1,5 @@
 /*
-JUnit project for software testing.
+JUnit practice file
 Name:   Carlos Meza, David Benepe
 */
 
@@ -15,7 +15,7 @@ import java.util.list;
  *
  * @author Carlos Meza and David Benepe
  */
-public class JunitTesting {
+public class practice {
 
     /**
      * @param args the command line arguments

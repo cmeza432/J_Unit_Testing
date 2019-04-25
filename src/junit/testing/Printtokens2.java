@@ -41,7 +41,8 @@ public class Printtokens2 {
 		
 		return null;
 	}
-	
+
+	//// SKIP ////
 	/**********************************************/
 	/* NAME:	get_char                      */
 	/* INPUT:       a BufferedReader      */
@@ -58,6 +59,7 @@ public class Printtokens2 {
 	    return ch;
 	}
 	
+	//// SKIP ////
 	/***************************************************/
 	/* NAME:      unget_char                           */
 	/* INPUT:     a BufferedReader,a character */
@@ -362,6 +364,7 @@ public class Printtokens2 {
 	     return true;
 	}
 	
+	//// SKIP ////
 	/******************************************/
 	/* NAME:	unget_error               */
 	/* INPUT:      a BufferedReader */
