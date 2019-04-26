@@ -39,7 +39,7 @@ public class Printtokens2 {
 			}
 		}
 		
-		return null;
+		return null;    //////// ***** ERROR(Should return br)  ****** /////////
 	}
 
 	//// SKIP ////
@@ -85,7 +85,7 @@ public class Printtokens2 {
 	BufferedReader open_token_stream(String fname)
 	{
 		BufferedReader br;
-	 if(fname.equals(null))
+	 if(fname.equals(null))     //////// ***** ERROR (Is never null, either empty or not) ****** /////////
 	    br=open_character_stream(null);
 	 else
 	    br=open_character_stream(fname);
@@ -194,7 +194,7 @@ public class Printtokens2 {
 	   }
 
 	 if(is_spec_symbol(ch)==true) return true; /* is special_symbol? */
-	 if(ch ==' ' || ch=='\n'|| ch=='\r' || ch==59) return true; 
+	 if(ch ==' ' || ch=='\n'|| ch=='\r' || ch==59) return true;         //////// ***** ERROR(doesnt check for number)  ****** /////////
 	               
 	 return false;               /* other case,return FALSE */
 	}
@@ -209,7 +209,7 @@ public class Printtokens2 {
 	static int token_type(String tok)
 	{ 
 	 if(is_keyword(tok))return(keyword);
-	 if(is_spec_symbol(tok.charAt(0)))return(spec_symbol);
+	 if(is_spec_symbol(tok.charAt(0)))return(spec_symbol);          //////// ***** ERROR(Gets string input but checks only first character)  ****** /////////
 	 if(is_identifier(tok))return(identifier);
 	 if(is_num_constant(tok))return(num_constant);
 	 if(is_str_constant(tok))return(str_constant);
@@ -249,7 +249,7 @@ public class Printtokens2 {
 	    System.out.print("character,\"" + tok.charAt(1) + "\".\n");
 	   }
 
-	   }
+	   }                                       //////// ***** ERROR(No else statement, doesnt check for string or comment)  ****** /////////
 
 	/* the code for tokens judgment function */
 
@@ -261,7 +261,7 @@ public class Printtokens2 {
 	/*************************************/
 	static boolean is_comment(String ident)
 	{
-	  if( ident.charAt(0) ==59 )   /* the char is 59   */
+	  if( ident.charAt(0) ==59 )   /* the char is 59   */       //////// ***** ERROR(checks only one character but comparing to two -- 59)  ****** /////////
 	     return true;
 	  else
 	     return false;
@@ -275,7 +275,7 @@ public class Printtokens2 {
 	static boolean is_keyword(String str)
 	{ 
 	 if (str.equals("and") || str.equals("or") || str.equals("if") ||
-			 str.equals("xor")||str.equals("lambda")||str.equals("=>"))
+			 str.equals("xor")||str.equals("lambda")||str.equals("=>")) //////// ***** ERROR(doesnt check all keywords, >)  ****** /////////
 	      return true;
 	  else 
 	      return false;
@@ -289,7 +289,7 @@ public class Printtokens2 {
 	static boolean is_char_constant(String str)
 	{
 	  if (str.length() > 2 && str.charAt(0)=='#' && Character.isLetter(str.charAt(1)))
-	     return true;
+	     return true;               //////// ***** ERROR(min is 2 not > 2, first char must be # is not always a char)  ****** /////////
 	  else  
 	     return false;
 	}
@@ -307,7 +307,7 @@ public class Printtokens2 {
 	    {
 	    while ( i <= str.length() && str.charAt(i) != '\0' )   /* until meet token end sign */
 	      {
-	       if(Character.isDigit(str.charAt(i+1)))	
+	       if(Character.isDigit(str.charAt(i+1)))	//////// ***** ERROR(Checks pos 0 then skips to pos 2, skips pos 1 on char)  ****** /////////
 	         i++;
 	       else
 	         return false;
@@ -328,13 +328,13 @@ public class Printtokens2 {
 	  int i=1;
 	 
 	  if ( str.charAt(0) =='"')
-	     { while (i < str.length() && str.charAt(0)!='\0')  /* until meet the token end sign */
+	     { while (i < str.length() && str.charAt(0)!='\0')  /* until meet the token end sign */ //////// ***** ERROR(checks first char not i)  ****** /////////
 	         { if(str.charAt(i)=='"')
 	             return true;        /* meet the second '"'           */
 	           else
 	           i++;
 	         }               /* end WHILE */
-	     return true;	
+	     return true;               //////// ***** ERROR(Returns true when entering if statement no matter what)  ****** /////////
 	    }
 	  else
 	    return false;       /* other return FALSE */
@@ -358,7 +358,7 @@ public class Printtokens2 {
 	            else
 	               return false;
 	           }      /* end WHILE */
-	     return false;
+	     return false;                      //////// ***** ERROR(If enters if statement, returns false no matter what)  ****** /////////
 	     }
 	  else
 	     return true;
@@ -383,7 +383,7 @@ public class Printtokens2 {
 	/*************************************************/
 	static void print_spec_symbol(String str)
 	{
-	    if      (str.equals("{"))
+	    if      (str.equals("{"))               //////// ***** ERROR(Checks for curly braces instead of paran)  ****** /////////
 	    {
 	         
 	             System.out.print("lparen.\n");
@@ -452,7 +452,7 @@ public class Printtokens2 {
 	    {
 	        return true;
 	    }
-	    if (c == ',')
+	    if (c == ',')               //////// ***** ERROR(Previously not checked for, so redundant)  ****** /////////
 	    {
 	        return true;
 	    }
