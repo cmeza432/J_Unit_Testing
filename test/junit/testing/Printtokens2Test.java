@@ -23,10 +23,8 @@ public class Printtokens2Test {
     @AfterClass
     public static void tearDownClass() {
     }
-
-    /**
-     * Test of open_character_stream method, of class Printtokens2.
-     */
+    /*
+    // Test of open_character_stream method, of class Printtokens2.    
     @Test
     public void testOpen_character_stream() {
         System.out.println("open_character_stream");
@@ -39,9 +37,7 @@ public class Printtokens2Test {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of open_token_stream method, of class Printtokens2.
-     */
+    // Test of open_token_stream method, of class Printtokens2.
     @Test
     public void testOpen_token_stream() {
         System.out.println("open_token_stream");
@@ -54,9 +50,7 @@ public class Printtokens2Test {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of get_token method, of class Printtokens2.
-     */
+    //Test of get_token method, of class Printtokens2.
     @Test
     public void testGet_token() {
         System.out.println("get_token");
@@ -69,9 +63,7 @@ public class Printtokens2Test {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of is_token_end method, of class Printtokens2.
-     */
+    //Test of is_token_end method, of class Printtokens2.
     @Test
     public void testIs_token_end() {
         System.out.println("is_token_end");
@@ -84,9 +76,7 @@ public class Printtokens2Test {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of token_type method, of class Printtokens2.
-     */
+    //Test of token_type method, of class Printtokens2.
     @Test
     public void testToken_type() {
         System.out.println("token_type");
@@ -98,9 +88,7 @@ public class Printtokens2Test {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of print_token method, of class Printtokens2.
-     */
+    //Test of print_token method, of class Printtokens2.
     @Test
     public void testPrint_token() {
         System.out.println("print_token");
@@ -111,9 +99,7 @@ public class Printtokens2Test {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of is_comment method, of class Printtokens2.
-     */
+    //Test of is_comment method, of class Printtokens2.
     @Test
     public void testIs_comment() {
         System.out.println("is_comment");
@@ -124,10 +110,8 @@ public class Printtokens2Test {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of is_keyword method, of class Printtokens2.
-     */
+    */
+    //Test of is_keyword method, of class Printtokens2.
     @Test
     public void testIs_keyword() {
         System.out.println("is_keyword");
@@ -137,14 +121,11 @@ public class Printtokens2Test {
         assertEquals(true, Printtokens2.is_keyword("xor"));
         assertEquals(true, Printtokens2.is_keyword("lambda"));
         assertEquals(true, Printtokens2.is_keyword("=>"));
-        
         assertEquals(false, Printtokens2.is_keyword("test"));
-        fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of is_char_constant method, of class Printtokens2.
-     */
+    
+    /*
+    //Test of is_char_constant method, of class Printtokens2.
     @Test
     public void testIs_char_constant() {
         System.out.println("is_char_constant");
@@ -156,9 +137,7 @@ public class Printtokens2Test {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of is_num_constant method, of class Printtokens2.
-     */
+    //Test of is_num_constant method, of class Printtokens2.
     @Test
     public void testIs_num_constant() {
         System.out.println("is_num_constant");
@@ -170,9 +149,7 @@ public class Printtokens2Test {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of is_str_constant method, of class Printtokens2.
-     */
+    //Test of is_str_constant method, of class Printtokens2.
     @Test
     public void testIs_str_constant() {
         System.out.println("is_str_constant");
@@ -184,9 +161,7 @@ public class Printtokens2Test {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of is_identifier method, of class Printtokens2.
-     */
+    //Test of is_identifier method, of class Printtokens2.
     @Test
     public void testIs_identifier() {
         System.out.println("is_identifier");
@@ -198,9 +173,7 @@ public class Printtokens2Test {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of print_spec_symbol method, of class Printtokens2.
-     */
+    //Test of print_spec_symbol method, of class Printtokens2.
     @Test
     public void testPrint_spec_symbol() {
         System.out.println("print_spec_symbol");
@@ -210,9 +183,7 @@ public class Printtokens2Test {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of is_spec_symbol method, of class Printtokens2.
-     */
+    //Test of is_spec_symbol method, of class Printtokens2.
     @Test
     public void testIs_spec_symbol() {
         System.out.println("is_spec_symbol");
@@ -224,9 +195,7 @@ public class Printtokens2Test {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of main method, of class Printtokens2.
-     */
+    //Test of main method, of class Printtokens2.
     @Test
     public void testMain() throws Exception {
         System.out.println("main");
@@ -235,5 +204,5 @@ public class Printtokens2Test {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+ */   
 }
