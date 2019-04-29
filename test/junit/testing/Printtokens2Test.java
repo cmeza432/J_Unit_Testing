@@ -124,19 +124,14 @@ public class Printtokens2Test {
         assertEquals(false, Printtokens2.is_keyword("test"));
     }
     
-    /*
     //Test of is_char_constant method, of class Printtokens2.
     @Test
     public void testIs_char_constant() {
-        System.out.println("is_char_constant");
-        String str = "";
-        boolean expResult = false;
-        boolean result = Printtokens2.is_char_constant(str);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(true, Printtokens2.is_char_constant("#bca"));
+        assertEquals(true, Printtokens2.is_char_constant("#ca"));
+        assertEquals(false, Printtokens2.is_char_constant("abc"));
     }
-
+    /*
     //Test of is_num_constant method, of class Printtokens2.
     @Test
     public void testIs_num_constant() {
