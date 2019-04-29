@@ -275,7 +275,7 @@ public class Printtokens2 {
 	static boolean is_keyword(String str)
 	{ 
 	 if (str.equals("and") || str.equals("or") || str.equals("if") ||
-			 str.equals("xor")||str.equals("lambda")||str.equals("=>")) //////// ***** ERROR(doesnt check all keywords, >)  ****** /////////
+			 str.equals("xor")||str.equals("lambda")||str.equals("=>"))
 	      return true;
 	  else 
 	      return false;
@@ -289,7 +289,7 @@ public class Printtokens2 {
 	static boolean is_char_constant(String str)
 	{
 	  if (str.length() > 2 && str.charAt(0)=='#' && Character.isLetter(str.charAt(1)))
-	     return true;               //////// ***** ERROR(min is 2 not > 2, first char must be # is not always a char)  ****** /////////
+	     return true;               //////// ***** ERROR(min is >= 2 not > 2, first char must be # is not always a char)  ****** /////////
 	  else  
 	     return false;
 	}
@@ -383,7 +383,7 @@ public class Printtokens2 {
 	/*************************************************/
 	static void print_spec_symbol(String str)
 	{
-	    if      (str.equals("{"))               //////// ***** ERROR(Checks for curly braces instead of paran)  ****** /////////
+	    if      (str.equals("{"))
 	    {
 	         
 	             System.out.print("lparen.\n");
@@ -452,7 +452,7 @@ public class Printtokens2 {
 	    {
 	        return true;
 	    }
-	    if (c == ',')               //////// ***** ERROR(Previously not checked for, so redundant)  ****** /////////
+	    if (c == ',')
 	    {
 	        return true;
 	    }
