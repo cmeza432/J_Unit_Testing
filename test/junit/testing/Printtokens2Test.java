@@ -58,13 +58,15 @@ public class Printtokens2Test {
     public void testPrint_token() {
         
     }
-
+    */
     //Test of is_comment method, of class Printtokens2.
     @Test
     public void testIs_comment() {
-        
+        assertEquals(true, Printtokens2.is_comment("59"));
+        assertEquals(true, Printtokens2.is_comment(";"));
+        assertEquals(false, Printtokens2.is_comment("test"));
     }
-    */
+    
     //Test of is_keyword method, of class Printtokens2.
     @Test
     public void testIs_keyword() {
