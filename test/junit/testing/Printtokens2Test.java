@@ -40,19 +40,26 @@ public class Printtokens2Test {
     public void testGet_token() {
         
     }
-
+    */
     //Test of is_token_end method, of class Printtokens2.
     @Test
     public void testIs_token_end() {
-        
+        //assertEquals();
     }
-
+    
     //Test of token_type method, of class Printtokens2.
     @Test
     public void testToken_type() {
-        
+        assertEquals(Printtokens2.keyword, Printtokens2.token_type("and"));
+        assertEquals(Printtokens2.spec_symbol, Printtokens2.token_type("("));
+        assertEquals(Printtokens2.identifier, Printtokens2.token_type("a"));
+        assertEquals(Printtokens2.num_constant, Printtokens2.token_type("123"));
+        assertEquals(Printtokens2.str_constant, Printtokens2.token_type("asd"));
+        assertEquals(Printtokens2.char_constant, Printtokens2.token_type("#c"));
+        assertEquals(Printtokens2.comment, Printtokens2.token_type(";"));
+        assertEquals(Printtokens2.error, Printtokens2.token_type("{"));
     }
-
+    /*
     //Test of print_token method, of class Printtokens2.
     @Test
     public void testPrint_token() {
@@ -64,7 +71,7 @@ public class Printtokens2Test {
     public void testIs_comment() {
         assertEquals(true, Printtokens2.is_comment("59"));
         assertEquals(true, Printtokens2.is_comment(";"));
-        assertEquals(false, Printtokens2.is_comment("test"));
+        assertEquals(false, Printtokens2.is_comment("70"));
     }
     
     //Test of is_keyword method, of class Printtokens2.
@@ -111,13 +118,13 @@ public class Printtokens2Test {
         assertEquals(true, Printtokens2.is_identifier("aa"));
         assertEquals(false, Printtokens2.is_identifier("1"));  
     }
-    
+    /*
     //Test of print_spec_symbol method, of class Printtokens2.
     @Test
     public void testPrint_spec_symbol() {
         
     }
-    
+    */
     //Test of is_spec_symbol method, of class Printtokens2.
     @Test
     public void testIs_spec_symbol() {

@@ -249,7 +249,7 @@ public class Printtokens2 {
 	    System.out.print("character,\"" + tok.charAt(1) + "\".\n");
 	   }
 
-	   }                                       //////// ***** ERROR(No else statement, doesnt check for string or comment)  ****** /////////
+	   }                                      
 
 	/* the code for tokens judgment function */
 
