@@ -85,7 +85,7 @@ public class Printtokens2 {
 	BufferedReader open_token_stream(String fname)
 	{
 		BufferedReader br;
-	 if(fname.equals(null))     //////// ***** ERROR (Is never null, either empty or not) ****** /////////
+	 if(fname.equals(null))
 	    br=open_character_stream(null);
 	 else
 	    br=open_character_stream(fname);

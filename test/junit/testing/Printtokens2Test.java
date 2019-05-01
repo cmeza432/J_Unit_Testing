@@ -92,13 +92,43 @@ public class Printtokens2Test {
         assertEquals(Printtokens2.comment, Printtokens2.token_type(";"));
         assertEquals(Printtokens2.error, Printtokens2.token_type("{"));
     }
-    /*
+    
     //Test of print_token method, of class Printtokens2.
     @Test
     public void testPrint_token() {
-        
+        // test the "and" token
+        Printtokens2 stream = new Printtokens2();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        stream.print_token("and");
+        assertEquals("keyword,\"and\".\n", outContent.toString());
+        // Testing for error token
+        outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        stream.print_token("1a");
+        assertEquals("error,\"1a\".\n", outContent.toString());
+        // Testing special symbol token
+        outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        stream.print_token(")");
+        assertEquals("rparen.\n", outContent.toString());
+        // Testing for identifier token
+        outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        stream.print_token("a1");
+        assertEquals("identifier,\"a1\".\n", outContent.toString()); 
+        // Testing for numeric token
+        outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        stream.print_token("123");
+        assertEquals("numeric,\"123\".\n", outContent.toString());
+        // Testing character token
+        outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        stream.print_token("#a");
+        assertEquals("character,\"#a\".\n", outContent.toString());
     }
-    */
+    
     //Test of is_comment method, of class Printtokens2.
     @Test
     public void testIs_comment() {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="1" failures="7" hostname="xOWG" name="junit.testing.Printtokens2Test" skipped="0" tests="10" time="0.154" timestamp="2019-05-01T19:50:28">
+<testsuite errors="1" failures="7" hostname="xOWG" name="junit.testing.Printtokens2Test" skipped="0" tests="11" time="0.109" timestamp="2019-05-01T20:17:29">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="nb.wait.for.caches" value="true" />
@@ -38,7 +38,7 @@
     <property name="user.name" value="Carlos Meza" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner junit.testing.Printtokens2Test skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Program Files\NetBeans 8.2\Java_projects\Junit Testing\build\test\results\TEST-junit.testing.Printtokens2Test.xml crashfile=C:\Program Files\NetBeans 8.2\Java_projects\Junit Testing\build\junitvmwatcher7080566528133416488.properties propsfile=C:\Program Files\NetBeans 8.2\Java_projects\Junit Testing\build\junit9154199637598615076.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner junit.testing.Printtokens2Test skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Program Files\NetBeans 8.2\Java_projects\Junit Testing\build\test\results\TEST-junit.testing.Printtokens2Test.xml crashfile=C:\Program Files\NetBeans 8.2\Java_projects\Junit Testing\build\junitvmwatcher3718228937481169754.properties propsfile=C:\Program Files\NetBeans 8.2\Java_projects\Junit Testing\build\junit7440878757971107331.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -310,49 +310,50 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="ant.file.type.Junit_Testing" value="file" />
   </properties>
-  <testcase classname="junit.testing.Printtokens2Test" name="testIs_identifier" time="0.01">
+  <testcase classname="junit.testing.Printtokens2Test" name="testIs_identifier" time="0.0">
     <failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;true&gt; but was:&lt;false&gt;
-	at junit.testing.Printtokens2Test.testIs_identifier(Printtokens2Test.java:150)
+	at junit.testing.Printtokens2Test.testIs_identifier(Printtokens2Test.java:180)
 </failure>
   </testcase>
-  <testcase classname="junit.testing.Printtokens2Test" name="testToken_type" time="0.002">
+  <testcase classname="junit.testing.Printtokens2Test" name="testPrint_token" time="0.0" />
+  <testcase classname="junit.testing.Printtokens2Test" name="testToken_type" time="0.0">
     <failure message="expected:&lt;3&gt; but was:&lt;0&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;3&gt; but was:&lt;0&gt;
 	at junit.testing.Printtokens2Test.testToken_type(Printtokens2Test.java:88)
 </failure>
   </testcase>
-  <testcase classname="junit.testing.Printtokens2Test" name="testPrint_spec_symbol" time="0.005">
+  <testcase classname="junit.testing.Printtokens2Test" name="testPrint_spec_symbol" time="0.0">
     <failure message="expected:&lt;[lparen.&#xa;]&gt; but was:&lt;[]&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;[lparen.
 ]&gt; but was:&lt;[]&gt;
-	at junit.testing.Printtokens2Test.testPrint_spec_symbol(Printtokens2Test.java:167)
+	at junit.testing.Printtokens2Test.testPrint_spec_symbol(Printtokens2Test.java:197)
 </failure>
   </testcase>
-  <testcase classname="junit.testing.Printtokens2Test" name="testIs_char_constant" time="0.002">
+  <testcase classname="junit.testing.Printtokens2Test" name="testIs_char_constant" time="0.0">
     <failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;true&gt; but was:&lt;false&gt;
-	at junit.testing.Printtokens2Test.testIs_char_constant(Printtokens2Test.java:126)
+	at junit.testing.Printtokens2Test.testIs_char_constant(Printtokens2Test.java:156)
 </failure>
   </testcase>
-  <testcase classname="junit.testing.Printtokens2Test" name="testIs_token_end" time="0.003">
+  <testcase classname="junit.testing.Printtokens2Test" name="testIs_token_end" time="0.0">
     <failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;true&gt; but was:&lt;false&gt;
 	at junit.testing.Printtokens2Test.testIs_token_end(Printtokens2Test.java:76)
 </failure>
   </testcase>
   <testcase classname="junit.testing.Printtokens2Test" name="testIs_keyword" time="0.0" />
-  <testcase classname="junit.testing.Printtokens2Test" name="testIs_num_constant" time="0.001">
+  <testcase classname="junit.testing.Printtokens2Test" name="testIs_num_constant" time="0.0">
     <error message="String index out of range: 3" type="java.lang.StringIndexOutOfBoundsException">java.lang.StringIndexOutOfBoundsException: String index out of range: 3
 	at java.lang.String.charAt(String.java:658)
 	at junit.testing.Printtokens2.is_num_constant(Printtokens2.java:310)
-	at junit.testing.Printtokens2Test.testIs_num_constant(Printtokens2Test.java:133)
+	at junit.testing.Printtokens2Test.testIs_num_constant(Printtokens2Test.java:163)
 </error>
   </testcase>
   <testcase classname="junit.testing.Printtokens2Test" name="testIs_spec_symbol" time="0.0" />
-  <testcase classname="junit.testing.Printtokens2Test" name="testIs_str_constant" time="0.001">
+  <testcase classname="junit.testing.Printtokens2Test" name="testIs_str_constant" time="0.0">
     <failure message="expected:&lt;false&gt; but was:&lt;true&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;false&gt; but was:&lt;true&gt;
-	at junit.testing.Printtokens2Test.testIs_str_constant(Printtokens2Test.java:143)
+	at junit.testing.Printtokens2Test.testIs_str_constant(Printtokens2Test.java:173)
 </failure>
   </testcase>
-  <testcase classname="junit.testing.Printtokens2Test" name="testIs_comment" time="0.001">
+  <testcase classname="junit.testing.Printtokens2Test" name="testIs_comment" time="0.0">
     <failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;true&gt; but was:&lt;false&gt;
-	at junit.testing.Printtokens2Test.testIs_comment(Printtokens2Test.java:105)
+	at junit.testing.Printtokens2Test.testIs_comment(Printtokens2Test.java:135)
 </failure>
   </testcase>
   <system-out><![CDATA[]]></system-out>
