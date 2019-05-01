@@ -4,11 +4,16 @@
 
 package junit.testing;
 
-import java.io.BufferedReader;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.io.InputStreamReader;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 
 
 public class Printtokens2Test {
@@ -26,25 +31,53 @@ public class Printtokens2Test {
     /*
     // Test of open_character_stream method, of class Printtokens2.    
     @Test
-    public void testOpen_character_stream() {
+    public void testOpen_character_stream() throws FileNotFoundException {
+        BufferedReader result = new BufferedReader(new InputStreamReader(System.in)); 
+        BufferedReader name_result;
+        FileReader fr = new FileReader("MyName");
+        name_result = new BufferedReader(fr);
+        
+        assertEquals(result, Printtokens2.open_character_stream(null));
+        assertEquals(name_result, Printtokens2.open_character_stream("MyName"));
+
     }
     
     // Test of open_token_stream method, of class Printtokens2.
     @Test
     public void testOpen_token_stream() {
-        
+        // Expected value into variable to assert
+        BufferedReader name, nothing;
+        name = Printtokens2.open_character_stream("MyFile");
+        nothing = Printtokens2.open_character_stream(null);
+        // Assert values expected with open character stream
+        assertEquals(name, Printtokens2.open_token_stream("MyFile"));
+        assertEquals(nothing, Printtokens2.open_token_stream(null));
     }
-
+    
     //Test of get_token method, of class Printtokens2.
     @Test
     public void testGet_token() {
+
         
     }
     */
     //Test of is_token_end method, of class Printtokens2.
     @Test
     public void testIs_token_end() {
-        //assertEquals();
+        // EOF test
+        assertEquals(true, Printtokens2.is_token_end(1, -1));
+        // Is string token test
+        assertEquals(true, Printtokens2.is_token_end(1, 10));
+        assertEquals(false, Printtokens2.is_token_end(1, 11));
+        // Is comment token test
+        assertEquals(true, Printtokens2.is_token_end(2, 10));
+        assertEquals(false, Printtokens2.is_token_end(2, 11));
+        // Is special symbol test
+        assertEquals(true, Printtokens2.is_token_end(0, 28));
+        // Checks for empty or spaces
+        assertEquals(true, Printtokens2.is_token_end(3, 59));
+        // Return false for anything else
+        assertEquals(false, Printtokens2.is_token_end(3, 20));
     }
     
     //Test of token_type method, of class Printtokens2.
@@ -118,13 +151,42 @@ public class Printtokens2Test {
         assertEquals(true, Printtokens2.is_identifier("aa"));
         assertEquals(false, Printtokens2.is_identifier("1"));  
     }
-    /*
+    
     //Test of print_spec_symbol method, of class Printtokens2.
     @Test
     public void testPrint_spec_symbol() {
-        
+        // Set stream variable and test for right parentheses
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        Printtokens2.print_spec_symbol(")");
+        assertEquals("rparen.\n", outContent.toString());
+        // Reset stream and test for left parentheses
+        outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        Printtokens2.print_spec_symbol("(");
+        assertEquals("lparen.\n", outContent.toString());
+        // Reset stream and test for left bracket
+        outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        Printtokens2.print_spec_symbol("[");
+        assertEquals("lsquare.\n", outContent.toString());
+        // Reset stream and test for right bracket
+        outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        Printtokens2.print_spec_symbol("]");
+        assertEquals("rsquare.\n", outContent.toString());
+        // Reset stream and test for quotes
+        outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        Printtokens2.print_spec_symbol("'");
+        assertEquals("quote.\n", outContent.toString());
+        // Reset stream and test bquote
+        outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        Printtokens2.print_spec_symbol("`");
+        assertEquals("bquote.\n", outContent.toString());
     }
-    */
+    
     //Test of is_spec_symbol method, of class Printtokens2.
     @Test
     public void testIs_spec_symbol() {
