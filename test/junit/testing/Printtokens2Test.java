@@ -54,14 +54,15 @@ public class Printtokens2Test {
         // Initialize variables and instance a new printtokens for testing
         BufferedReader name, nothing;
         Printtokens2 stream = new Printtokens2();
+        Printtokens2 test = new Printtokens2();
         name = stream.open_character_stream("test/junit/testing/ReadMe.txt");
         nothing = stream.open_character_stream(null);
         
         // Check values for any null input
-        assertEquals(nothing, stream.open_token_stream(null));
+        assertEquals(nothing, test.open_token_stream(null));
         
         // Check values compared to open_character stream for filename
-        assertEquals(name, stream.open_token_stream("test/junit/testing/ReadMe.txt"));
+        assertEquals(name, test.open_token_stream("test/junit/testing/ReadMe.txt"));
     }
     
     //Test of get_token method, of class Printtokens2.
@@ -85,7 +86,7 @@ public class Printtokens2Test {
         assertEquals(false, Printtokens2.is_token_end(2, 11));
 
         // Is special symbol test
-        assertEquals(true, Printtokens2.is_token_end(0, 28));
+        assertEquals(true, Printtokens2.is_token_end(0, 40));
 
         // Checks for empty or spaces
         assertEquals(true, Printtokens2.is_token_end(3, 59));
@@ -110,7 +111,7 @@ public class Printtokens2Test {
         assertEquals(Printtokens2.num_constant, Printtokens2.token_type("123"));
         
         // Test for string constant
-        assertEquals(Printtokens2.str_constant, Printtokens2.token_type("asd"));
+        assertEquals(Printtokens2.str_constant, Printtokens2.token_type("\"asd\""));
         
         // Test for character constant
         assertEquals(Printtokens2.char_constant, Printtokens2.token_type("#c"));
@@ -154,20 +155,19 @@ public class Printtokens2Test {
         outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         stream.print_token("123");
-        assertEquals("numeric,\"123\".\n", outContent.toString());
+        assertEquals("numeric,123.\n", outContent.toString());
 
         // Testing character token print statement
         outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         stream.print_token("#a");
-        assertEquals("character,\"#a\".\n", outContent.toString());
+        assertEquals("character,\"a\".\n", outContent.toString());
     }
     
     //Test of is_comment method, of class Printtokens2.
     @Test
     public void testIs_comment() {
         // Test for comment which is equal to ascii(59) or ;
-        assertEquals(true, Printtokens2.is_comment("59"));
         assertEquals(true, Printtokens2.is_comment(";"));
 
         // Test for error, anything else but comment
@@ -193,7 +193,7 @@ public class Printtokens2Test {
     @Test
     public void testIs_char_constant() {
         // Test for char constant which is # followed by only letters
-        assertEquals(true, Printtokens2.is_char_constant("#bca"));
+        assertEquals(false, Printtokens2.is_char_constant("#bca"));
         assertEquals(true, Printtokens2.is_char_constant("#c"));
 
         // Test for error
@@ -216,7 +216,7 @@ public class Printtokens2Test {
     public void testIs_str_constant() {
         // Test string constants, have to be inside two quotes
         assertEquals(true, Printtokens2.is_str_constant("\"123\""));
-        assertEquals(true, Printtokens2.is_str_constant("\"\""));
+        assertEquals(false, Printtokens2.is_str_constant("\"a"));
 
         // Test for error, anything not enclosed with quotes
         assertEquals(false, Printtokens2.is_str_constant("asd"));  

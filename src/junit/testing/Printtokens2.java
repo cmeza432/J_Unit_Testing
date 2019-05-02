@@ -39,7 +39,7 @@ public class Printtokens2 {
 			}
 		}
 		
-		return null;    //////// ***** ERROR(Should return br)  ****** /////////
+		return br;
 	}
 
 	//// SKIP ////
@@ -85,7 +85,7 @@ public class Printtokens2 {
 	BufferedReader open_token_stream(String fname)
 	{
 		BufferedReader br;
-	 if(fname.equals(null))
+	 if(fname == null)
 	    br=open_character_stream(null);
 	 else
 	    br=open_character_stream(fname);
@@ -153,12 +153,12 @@ public class Printtokens2 {
 	      { unget_char(ch,br);        /* then put back this character       */
 	        return sb.toString();
 	      }
-	   if(id==1)                  /* if end character is " and is string */
+	   if(id==2)                  /* if end character is " and is string */
 	     {                     
 	       sb.append(ch);
 	       return sb.toString(); 
 	     }
-	   if(id==0 && ch==59)
+	   if(id==1 && ch==59)
 	                                   /* when not in string or comment,meet ";" */
 	     { unget_char(ch,br);       /* then put back this character         */
 	       return sb.toString(); 
@@ -194,7 +194,7 @@ public class Printtokens2 {
 	   }
 
 	 if(is_spec_symbol(ch)==true) return true; /* is special_symbol? */
-	 if(ch ==' ' || ch=='\n'|| ch=='\r' || ch==59) return true;         //////// ***** ERROR(doesnt check for number)  ****** /////////
+	 if(ch ==' ' || ch=='\n'|| ch=='\r' || ch==59) return true;
 	               
 	 return false;               /* other case,return FALSE */
 	}
@@ -209,7 +209,7 @@ public class Printtokens2 {
 	static int token_type(String tok)
 	{ 
 	 if(is_keyword(tok))return(keyword);
-	 if(is_spec_symbol(tok.charAt(0)))return(spec_symbol);          //////// ***** ERROR(Gets string input but checks only first character)  ****** /////////
+	 if(is_spec_symbol(tok.charAt(0)))return(spec_symbol);
 	 if(is_identifier(tok))return(identifier);
 	 if(is_num_constant(tok))return(num_constant);
 	 if(is_str_constant(tok))return(str_constant);
@@ -261,7 +261,7 @@ public class Printtokens2 {
 	/*************************************/
 	static boolean is_comment(String ident)
 	{
-	  if( ident.charAt(0) ==59 )   /* the char is 59   */       //////// ***** ERROR(checks only one character but comparing to two -- 59)  ****** /////////
+	  if( ident.charAt(0) ==59 )
 	     return true;
 	  else
 	     return false;
@@ -288,8 +288,8 @@ public class Printtokens2 {
 	/*************************************/
 	static boolean is_char_constant(String str)
 	{
-	  if (str.length() > 2 && str.charAt(0)=='#' && Character.isLetter(str.charAt(1)))
-	     return true;               //////// ***** ERROR(min is >= 2 not > 2, first char must be # is not always a char)  ****** /////////
+	  if (str.length() == 2 && str.charAt(0)=='#' && Character.isLetter(str.charAt(1)))
+	     return true;
 	  else  
 	     return false;
 	}
@@ -305,9 +305,9 @@ public class Printtokens2 {
 	  
 	  if ( Character.isDigit(str.charAt(0))) 
 	    {
-	    while ( i <= str.length() && str.charAt(i) != '\0' )   /* until meet token end sign */
+	    while ( i < str.length() && str.charAt(i) != '\0' )   /* until meet token end sign */
 	      {
-	       if(Character.isDigit(str.charAt(i+1)))	//////// ***** ERROR(Checks pos 0 then skips to pos 2, skips pos 1 on char)  ****** /////////
+	       if(Character.isDigit(str.charAt(i)))
 	         i++;
 	       else
 	         return false;
@@ -334,7 +334,7 @@ public class Printtokens2 {
 	           else
 	           i++;
 	         }               /* end WHILE */
-	     return true;               //////// ***** ERROR(Returns true when entering if statement no matter what)  ****** /////////
+	     return false;
 	    }
 	  else
 	    return false;       /* other return FALSE */
@@ -358,10 +358,10 @@ public class Printtokens2 {
 	            else
 	               return false;
 	           }      /* end WHILE */
-	     return false;                      //////// ***** ERROR(If enters if statement, returns false no matter what)  ****** /////////
+	     return true;
 	     }
 	  else
-	     return true;
+	     return false;
 	}
 	
 	//// SKIP ////
@@ -383,7 +383,7 @@ public class Printtokens2 {
 	/*************************************************/
 	static void print_spec_symbol(String str)
 	{
-	    if      (str.equals("{"))
+	    if      (str.equals("("))
 	    {
 	         
 	             System.out.print("lparen.\n");
@@ -464,7 +464,7 @@ public class Printtokens2 {
 		if (args.length == 0) {	/* if not given filename,take as '""' */
 			fname = new String();
 		} else if (args.length == 1) {
-			fname = args[1];
+			fname = args[0]; 
 		} else {
 			System.out.print("Error!,please give the token stream\n");
 			System.exit(0);
