@@ -38,15 +38,14 @@ public class Printtokens2Test {
         BufferedReader name_result;
 
         // Read file for comparison
-        FileReader fr = new FileReader("ReadMe.txt");
+        FileReader fr = new FileReader("test/junit/testing/ReadMe.txt");
         name_result = new BufferedReader(fr);
 
         // Test for null input
         assertEquals(result, stream.open_character_stream(null));
         
         // Test for file input 
-        assertEquals(name_result, stream.open_character_stream("ReadMe.txt"));
-
+        assertEquals(name_result, stream.open_character_stream("test/junit/testing/ReadMe.txt"));
     }
     
     // Test of open_token_stream method, of class Printtokens2.
@@ -55,20 +54,19 @@ public class Printtokens2Test {
         // Initialize variables and instance a new printtokens for testing
         BufferedReader name, nothing;
         Printtokens2 stream = new Printtokens2();
-        name = stream.open_character_stream("ReadMe.txt");
+        name = stream.open_character_stream("test/junit/testing/ReadMe.txt");
         nothing = stream.open_character_stream(null);
         
         // Check values for any null input
         assertEquals(nothing, stream.open_token_stream(null));
         
         // Check values compared to open_character stream for filename
-        assertEquals(name, stream.open_token_stream("ReadMe.txt"));
+        assertEquals(name, stream.open_token_stream("test/junit/testing/ReadMe.txt"));
     }
     
     //Test of get_token method, of class Printtokens2.
     @Test
     public void testGet_token() {
-
         
     }
     
@@ -289,11 +287,10 @@ public class Printtokens2Test {
         assertEquals(true, Printtokens2.is_spec_symbol(','));
         assertEquals(false, Printtokens2.is_spec_symbol('{'));
     }
-    /*
+
     //Test of main method, of class Printtokens2.
     @Test
     public void testMain() throws Exception {
         
     }
- */   
 }
