@@ -28,30 +28,41 @@ public class Printtokens2Test {
     @AfterClass
     public static void tearDownClass() {
     }
-    /*
+    
     // Test of open_character_stream method, of class Printtokens2.    
     @Test
     public void testOpen_character_stream() throws FileNotFoundException {
+        // Create instances to assert
         BufferedReader result = new BufferedReader(new InputStreamReader(System.in)); 
+        Printtokens2 stream = new Printtokens2();
         BufferedReader name_result;
-        FileReader fr = new FileReader("MyName");
+
+        // Read file for comparison
+        FileReader fr = new FileReader("ReadMe.txt");
         name_result = new BufferedReader(fr);
+
+        // Test for null input
+        assertEquals(result, stream.open_character_stream(null));
         
-        assertEquals(result, Printtokens2.open_character_stream(null));
-        assertEquals(name_result, Printtokens2.open_character_stream("MyName"));
+        // Test for file input 
+        assertEquals(name_result, stream.open_character_stream("ReadMe.txt"));
 
     }
     
     // Test of open_token_stream method, of class Printtokens2.
     @Test
     public void testOpen_token_stream() {
-        // Expected value into variable to assert
+        // Initialize variables and instance a new printtokens for testing
         BufferedReader name, nothing;
-        name = Printtokens2.open_character_stream("MyFile");
-        nothing = Printtokens2.open_character_stream(null);
-        // Assert values expected with open character stream
-        assertEquals(name, Printtokens2.open_token_stream("MyFile"));
-        assertEquals(nothing, Printtokens2.open_token_stream(null));
+        Printtokens2 stream = new Printtokens2();
+        name = stream.open_character_stream("ReadMe.txt");
+        nothing = stream.open_character_stream(null);
+        
+        // Check values for any null input
+        assertEquals(nothing, stream.open_token_stream(null));
+        
+        // Check values compared to open_character stream for filename
+        assertEquals(name, stream.open_token_stream("ReadMe.txt"));
     }
     
     //Test of get_token method, of class Printtokens2.
@@ -60,7 +71,7 @@ public class Printtokens2Test {
 
         
     }
-    */
+    
     //Test of is_token_end method, of class Printtokens2.
     @Test
     public void testIs_token_end() {
